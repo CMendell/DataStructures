@@ -8,8 +8,8 @@ void fileToArr(string fileName, bool **arr2D)
 	fstream input;
 	input.open(fileName);
 	string line;
-	bool good = true;
 	int num, trans = 0;
+	stringstream stream;
 
 	if (!input.good())
 	{
@@ -17,27 +17,35 @@ void fileToArr(string fileName, bool **arr2D)
 		return;
 	}
 
-	while (!input.eof())
+	// Checks for empty file
+	if (input.eof())
 	{
-		cout << "Starting line " << trans << endl;
-		getline(input, line);
-		stringstream stream(line);
-
-		cout << line << endl;
-
-		while (good)
-		{
-			stream >> num;
-			if (!stream)
-			{
-				good = !good;
-				break;
-			}
-			arr2D[trans][num] = true;
-		}
-		stream.clear();
-
-		cout << "Line " << trans << " done." << endl;
-		trans++;
+		return;
 	}
+
+	// Gets first line of file for parsing
+	getline(input, line);
+	stream.str(line);
+	// Parses each line of file and sets all found numbers to true for each transaction
+	while (1)
+	{
+		stream >> num;
+		arr2D[trans][num] = true;
+
+		if (stream.eof())
+		{
+			// Reads in next line if not eof
+			getline(input, line);
+			stream.str(line);
+			stream.clear();
+			trans++;
+
+			// Checks for end of file
+			if (input.eof())
+			{
+				return;
+			}
+		}
+	}
+	
 }
