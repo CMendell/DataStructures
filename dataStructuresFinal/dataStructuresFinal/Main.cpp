@@ -1,13 +1,18 @@
+<<<<<<< HEAD
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <sstream>
 #include "functions.h"
+=======
+#include "Header.h"
+>>>>>>> refs/remotes/origin/master
 
 using namespace std;
 
 int main()
 {
+<<<<<<< HEAD
 	string fileName;
 	string line;
 	// Need to add support to read this info from file name
@@ -76,3 +81,7 @@ int main()
 	system("pause");
 
 }
+=======
+	system("pause");
+}
+>>>>>>> refs/remotes/origin/master
