@@ -1,4 +1,5 @@
 #include "functions.h"
+#include "queue.h"
 #include <sstream>
 
 using namespace std;
@@ -46,6 +47,94 @@ void fileToArr(string fileName, bool **arr2D)
 				return;
 			}
 		}
+	}
+}
+
+// Working frequent1Set
+/*
+// determines frequent 1-itemsets
+// DONE
+void frequent1Set(bool **arr2D, long transNum, long items, int minSupport, string outFile)
+{
+int sum = 0, item = 0;
+
+
+// creates report file
+fstream output;
+output.open(outFile, ios_base::app);
+
+
+output << "1-itemset" << endl;
+
+
+// reads each item in array adding number of appearances
+for (long i = 0; i < items; i++)
+{
+for (long j = 0; j < transNum; j++)
+{
+if (arr2D[j][i])
+{
+sum++;
+}
+}
+if (sum >= minSupport)
+{
+output << i << " (" << sum << ")" << endl;
+}
+sum = 0;
+}
+}*/// 
+
+
+// WIP
+void frequent1Set(bool **arr2D, long transNum, long items, int minSupport, string outFile)
+{
+	int sum = 0, item = 0, size;
+	Queue<int> setQ;
+
+
+	// creates report file
+	fstream output;
+	output.open(outFile, ios_base::app);
+
+
+	output << "1-itemset" << endl;
+
+
+	// reads each item in array adding number of appearances
+	for (long i = 0; i < items; i++)
+	{
+		for (long j = 0; j < transNum; j++)
+		{
+			if (arr2D[j][i])
+			{
+				sum++;
+			}
+		}
+		if (sum >= minSupport)
+		{
+			output << i << " (" << sum << ")" << endl;
+			setQ.enqueue(i);
+		}
+		sum = 0;
+	}
+
+
+	size = setQ.getCount();
+	int *oneSet = new int[size];
+
+
+	// Loads all frequent 1-itemsets into array
+	for (int i = 0; i < size; i++)
+	{
+		oneSet[i] = setQ.dequeue();
+	}
+
+
+	while (size > 1)
+	{
+
+
 	}
 }
 
