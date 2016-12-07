@@ -1,2 +1,3 @@
 ﻿  Main.cpp
-d:\visual studio\vc\include\crtdefs.h(10): fatal error C1083: Cannot open include file: 'corecrt.h': No such file or directory
+  dataStructuresFinal.vcxproj -> C:\Users\zenit\Desktop\DataStructures\dataStructuresFinal\Debug\dataStructuresFinal.exe
+  dataStructuresFinal.vcxproj -> C:\Users\zenit\Desktop\DataStructures\dataStructuresFinal\Debug\dataStructuresFinal.pdb (Partial PDB)
