@@ -47,5 +47,29 @@ void fileToArr(string fileName, bool **arr2D)
 			}
 		}
 	}
+}
+
+
+string getFileName(double &items, double &transNum)
+{
+	string transLength, numItems, numTrans, fileName;
+	string::size_type sz;
+
+	cout << "The following data will determine which file to open..." << endl << endl;
+
+	cout << "Please enter the average Transaction length: ";
+	cin >> transLength;
+	cout << "Please enter the number of distinct items in terms of how many thousand (ex. 20 = 0.02 and 10000 = 10): ";
+	cin >> numItems;
+	cout << "Please enter the number of transactions in terms of how many thousand: ";
+	cin >> numTrans;
 	
+	fileName = "T" + transLength + ".N" + numItems + "K.D" + numTrans + "K.txt";
+	items = stod(numItems, &sz);
+	transNum = stod(numTrans, &sz);
+
+
+
+
+	return fileName;
 }

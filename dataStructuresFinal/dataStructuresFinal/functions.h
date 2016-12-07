@@ -7,5 +7,6 @@
 using namespace std;
 
 void fileToArr(string fileName, bool **arr2D);
+string getFileName(double &items, double &transNum);
 
 #endif

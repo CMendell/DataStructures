@@ -8,23 +8,30 @@ using namespace std;
 
 int main()
 {
-	string fileName = "T5.N0.01K.D0.02K.txt";
-
+	string fileName;
+	string line;
 	// Need to add support to read this info from file name
-	int items = 10;
-	int transNum = 20;
-
-	string file = "testFile.txt", line;
+	double items;
+	double transNum;
 	ifstream input;
-	input.open(file);
 	bool good = true, pass = true;
 	stringstream stream;
 	int num;
 
-	/*
+
+	fileName = getFileName(items, transNum);
+
+	items = items * 1000;
+	transNum = transNum * 1000;
+
+	input.open(fileName);
+
+	
 	getline(input, line);
 	stream.str(line);
 
+	//not sure what this is for. seems to just display contents of file. should probably get rid of
+	/*
 	while (good)
 	{
 		stream >> num;
@@ -65,5 +72,7 @@ int main()
 	}
 	
 	cin.get();
+
+	system("pause");
 
 }
