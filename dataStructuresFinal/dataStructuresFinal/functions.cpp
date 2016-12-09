@@ -162,3 +162,9 @@ string getFileName(double &items, double &transNum)
 
 	return fileName;
 }
+
+void pause()
+{
+	cout << endl << "Please press enter to continue...";
+	cin.get();
+}

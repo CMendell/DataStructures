@@ -3,6 +3,7 @@
 #include <string>
 #include <sstream>
 #include "functions.h"
+#include "timerSystem.h"
 
 
 using namespace std;
@@ -11,6 +12,7 @@ using namespace std;
 int main()
 {
 	string outFile = "report.txt";
+	TimerSystem timer;
 
 	/*
 	string fileName;
@@ -39,7 +41,7 @@ int main()
 	
 	fileToArr(fileName, arr2D);
 	
-	/*
+	
 	for (long i = 0; i < transNum; i++)
 	{
 	for (long j = 0; j < items; j++)
@@ -47,11 +49,11 @@ int main()
 	cout << arr2D[i][j] << " ";
 	}
 	cout << endl;
-	}*/
+	}
 
 	//frequent1Set(arr2D, transNum, items, minSupport, outFile);
 
-	cin.get();
+	pause();
 }
 
 

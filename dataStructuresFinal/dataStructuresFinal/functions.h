@@ -12,4 +12,6 @@ void frequent1Set(bool **arr2D, long transNum, long items, int minSupport, strin
 
 string getFileName(double &items, double &transNum);
 
+void pause();
+
 #endif
