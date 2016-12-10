@@ -1,6 +1,4 @@
 ﻿  functions.cpp
-c:\users\zenit\desktop\datastructures\datastructuresfinal\datastructuresfinal\functions.cpp(158): warning C4244: 'initializing': conversion from 'double' to 'unsigned int', possible loss of data
-  Main.cpp
-  Generating Code...
+c:\users\zenit\desktop\datastructures\datastructuresfinal\datastructuresfinal\functions.cpp(147): warning C4244: 'initializing': conversion from 'double' to 'unsigned int', possible loss of data
   dataStructuresFinal.vcxproj -> C:\Users\zenit\Desktop\DataStructures\dataStructuresFinal\Debug\dataStructuresFinal.exe
   dataStructuresFinal.vcxproj -> C:\Users\zenit\Desktop\DataStructures\dataStructuresFinal\Debug\dataStructuresFinal.pdb (Partial PDB)
