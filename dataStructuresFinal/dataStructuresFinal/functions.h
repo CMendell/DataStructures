@@ -14,4 +14,9 @@ string getFileName(double &items, double &transNum);
 
 void pause();
 
+double factorial(double setSize, double comboSize);
+
+void Apriori(bool **arr2D, int *oneSet, int size, long transNum, long items, int minSupport, string outFile);
+
+void makeCombo(int offset, int k, int pos, int arrSize, int *arr, int *oneSet, int oneSetSize);
 #endif

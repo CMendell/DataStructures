@@ -130,11 +130,44 @@ void frequent1Set(bool **arr2D, long transNum, long items, int minSupport, strin
 		oneSet[i] = setQ.dequeue();
 	}
 
+}
 
-	while (size > 1)
+double factorial(double setSize, double comboSize)
+{
+	double nFac = 1, rFac = 1, fac;
+
+	for (double i = setSize; i > setSize - comboSize; i--)
 	{
+		nFac *= i;
+	}
 
+	for (double i = comboSize; i > 0; i--)
+	{
+		rFac *= i;
+	}
 
+	fac = nFac / rFac;
+	return fac;
+}
+
+void Apriori(bool **arr2D, int *oneSet, int size, long transNum, long items, int minSupport, string outFile)
+{
+	for (int k = 2; oneSet[k - 1] != NULL; k++)
+	{
+		double numCombos = factorial(size, k);
+		double **allCombos = new double *[numCombos];
+		for (int i = 0; i < size; i++)
+		{
+			allCombos[i] = new double[k];
+		}
+
+		for (int t = 0; t < transNum; t++)
+		{
+
+		}
+		/*
+		Ck = apriori_gen(Lk-1);
+		*/
 	}
 }
 
@@ -167,4 +200,22 @@ void pause()
 {
 	cout << endl << "Please press enter to continue...";
 	cin.get();
+}
+
+void makeCombo(int offset, int k, int pos, int arrSize, int *arr, int *oneSet, int oneSetSize)
+{
+	if (k == 0)
+	{
+		for (int i = 0; i < arrSize; i++)
+		{
+			cout << arr[i] << " ";
+		}
+		cout << endl;
+		return;
+	}
+	for (int i = offset; i < oneSetSize - k + 1; ++i)
+	{
+		arr[pos] = oneSet[i];
+		makeCombo(i + 1, k - 1, pos + 1, arrSize, arr, oneSet, oneSetSize);
+	}
 }

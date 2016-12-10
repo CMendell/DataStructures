@@ -51,7 +51,7 @@ int main()
 	cout << endl;
 	}
 
-	//frequent1Set(arr2D, transNum, items, minSupport, outFile);
+	frequent1Set(arr2D, transNum, items, minSupport, outFile);
 
 	pause();
 }
